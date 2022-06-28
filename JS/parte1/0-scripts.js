@@ -1,0 +1,8 @@
+console.log('Bem vindos ao Starter!!')
+console.log('Mayk ${1 + 1}')
+console.log(1 + 1)
+console.log(33)
+console.log(12.5)
+console.log(12.5+33)
+console.log(12.5 / "asfd")
+console.log(Infinity)

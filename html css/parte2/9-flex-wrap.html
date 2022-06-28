@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            flex-flow: column wrap;
+            border: 1px dashed red;
+        }
+        .box div {
+            border: 1px solid;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Flex-Wrap
+    - Podemos utilizar multi linhas.
+    - Cada nova linha, um novo flex container
+    -->
+    <!-- Flex-flow
+    É um shorthand de flex-direction e flex-wrap
+    -->
+    <div class="box">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+    </div>
+</body>
+</html>

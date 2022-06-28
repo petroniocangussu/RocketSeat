@@ -1,0 +1,59 @@
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+        grid-template-rows: 30px 1fr 30px;
+        grid-template-columns: 1fr 80px;
+    }
+    header {
+        grid-area: header;
+        background-color: green;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 8px;
+    }
+    main {
+        grid-area: main;
+        background-color: red;
+    }
+    aside {
+        grid-area: aside;
+        background-color: blue;
+    }
+    footer {
+        grid-area: footer;
+        background-color: gray;
+    }
+    p {
+        font-stretch: expanded;
+        letter-spacing: 0.5em;
+        word-spacing: 0.2em;
+        line-height: 1.6;
+        text-transform: capitalize;
+        text-decoration: underline;
+        text-align: justify;
+        text-shadow: 5px 3px 5px black;
+        /*shorthand style variant weight stretch size line-height family*/
+    }
+</style>
+<body>
+    <header>
+        <div>logo</div>
+        <div>menu</div>
+    </header>
+
+    <main>Conteúdo
+        <h1>É sobre isso</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet similique quod quo distinctio omnis voluptate maxime recusandae. Ipsam delectus accusantium aut natus expedita aperiam ipsa et magnam eos officia.</p>
+    </main>
+
+    <aside>Infos adicionais</aside>
+
+    <footer>Rodapé</footer>
+</body>

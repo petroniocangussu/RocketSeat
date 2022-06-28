@@ -1,0 +1,14 @@
+<script>
+    // Vamos iniciar um bloco
+    // var é global e também local
+    // const e leg são locais e só funcionam no escopo onde foi criada
+console.log('> existe x antes do bloco? ', x)
+let y = 1;
+{
+    var x = 0
+    let y = 0
+    console.log('> existe y ', y)
+}
+console.log('> existe x depois do bloco? ', x)
+console.log('> existe y depois do bloco? ', y)
+</script>
