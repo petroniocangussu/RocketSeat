@@ -1,0 +1,67 @@
+O que é?
+É um paradigma de programação como a Orientação a Objetos, por exemplo:
+Uma maneira de resolver problemas.
+
+Funções
+    * Pequenas tarefas dentro de uma função
+    * Abstrair um problema e isolar ele dentro da função
+    * Não modificar dados fora dela
+    * Pequenas e bem específicas no que fazem
+
+Características principais da função
+    * Um dado (ou mais) entra em uma função e um novo dado sai
+    * Não altera dados
+    * Não guarda estado - stateless
+
+Linguagens funcionais
+    * JavaScript (multiparadigma)
+    * PHP (multiparadigma)
+    * Elixir
+    * Haskell
+
+Pontos positivos
+    * Fácil manutenção
+    * Fácil uso de testes
+        * Funções isoladas e consistentes
+    * Códigos mais confiáveis
+
+Imutabilidade
+Uma variável não vai variar. Se você precisar muda-la, você não mudará, criar outra.
+
+Stateless (exemplo: const square = n => n * n;)
+Não guarda estado. A função só conhece os dados entregues a ela.
+A resposta não poderá variar
+
+**Funções
+
+Funções independentes
+    * Deverá ter ao menos 1 argumento
+    * Deverá retornar algo
+    * Nada que acontecer lá dentro afeta o mundo externo
+        * Dados imutáveis
+        * Não guarda estado
+    * Não faremos loots, mas se houver necessidade, usaremos recursão (função chama ela mesma)
+
+Funções puras
+    * Não deverá depender de nenhum dado externo a não ser o que foi passado como argumento
+    * Não deverá sofrer nenhuma interferência externa
+    * Se o argumento é o mesmo, o retorno não poderá ser diferente quando a função for chamada novamente
+    * Não terá nenhum efeito colateral no seu código
+        * Não irá modificar nenhum dado.
+        * Não irá guardar nenhum estado.
+
+First-class function
+    * Podem estar em qualquer lugar, inclusive, como parâmetro de outras funções.
+    * A função poderá ser entendida como uma variável
+
+Higher-order function
+    * Funções que recebem funções como argumentos.
+    * Funções que poderão retornar outras funções.
+
+Composição de Funções
+    * Um encadeamento de funções.
+    * Uma função que retorna um dado e vai pra outra função, que retorna um dado e vai pra outra, etc.
+
+Conclusão
+É um paradigma de programação (maneira de observar e resolver problemas).
+Conceitos fundamentais -> Stateless, Imutabilidade, função pura, higher-orders

@@ -1,0 +1,194 @@
+HyperText Transfer Protocol
+
+1. Visão Geral
+    * Permite troca de informações e dados na internet.
+    * Uma troca de mensagens.
+    * HTML, CSS, Scripts, imagens, vídeos.
+    * Uma chamada para cada um desses recursos.
+
+2. Conceitos
+    * Feito para ser simples e legível para qualquer pessoa.
+    * Feito para ser usado pelo Cliente/Servidor -> Requisição/Resposta.
+    * Ele não guarda estado - Stateless - não existe relação entre as conexões.
+        ** EX: eventos independentes, como jogar a moeda várias vezes e dar várias vezes cara ou coroa.
+    * Extensível -> através do header, podemos fazer diversas trocas de informações entre o cliente-servidor, conforme necessidade.
+
+3. Cliente
+    É o User Agent (Browser/cURL).
+    É a entidade que da início à comunicação
+    O cliente faz um pedido ao servidor, uma ação (GET, POST, PUT, DELETE)
+
+4. Servidor
+    Se apresenta como uma máquina.
+    Preparado para ouvir e processar.
+    Vários servidores em um computador
+    Resposta -> headers/body -> Status code -> 404 ou 500
+
+5. Proxies
+    Representantes.
+    Fica entre o cliente e o servidor.
+    Ajudam a fazer o transporte de dados.
+    Servem para diversas funções:
+        Cache
+        Filtro (tipo um antivírus, ou controle parental)
+        Load balancing (distribuição da carga)
+        Autenticação
+        Autorização
+
+6. URI
+    É um identificador de um recurso (Uniform Resource Identifier)
+        Identifica um recurso com um nome ou localização
+    Resource
+        É o alvo do pedido HTTP
+        Qualquer coisa identificável/Entidade
+            Digital -> Email -> protocolo mailto:
+            Abstrata -> Sessão/Autenticação
+            Física ->
+            Se podemos identificar, nomear, endereçar ou manipular, estamos falando de recurso.
+    Locator
+        URL (Uniform Resource Locator)
+            Toda URL é uma URI, mas nem toda URI é uma URL.
+            Toda Url necessita de um protocolo e um domínio - obrigatoriamente.
+            Opcionalmente - Subdomínio, path, parâmetros, porta, âncora
+    Name
+        URN (Uniform Resource Name)
+        
+7. HTTP Messages
+    Mensagens
+    HTTP/2 foi feito de maneira binária, otimizado, feito da mesma maneira que a versão 1.
+    Mensagens de pedido e mensagens de resposta.
+    
+    7.1. Request
+    Request Line: O pedido é feito através de um método, é preciso colocar qual a versão do protocolo e a URI.
+    A depender do método se utiliza body e headers.
+
+    7.2. Response
+    Protocol Version
+
+8. HTTP Methods
+    Define um conjunto de métodos HTTP.
+    Indica a ação que o cliente deseja operar.
+    Podem ser chamados de verbos HTTP.
+    Cada um possui a sua semântica.
+    Características
+        Seguro
+            Não altera o estado do servidor.
+            Somente leitura.
+            Cliente não solicita alterações.
+            Não há carga extra para o servidor.
+            O servidor é responsável em manter o método seguro.
+            Quais são? GET HEAD OPTION.
+        Idempotentes
+            Ao executar o método a resposta deverá ser sempre a mesma.
+            Quais são? Todos os seguros são idempotentes.
+            Status code poderá ser diferente.
+            O Servidor tem a responsabilidade de retornar dados da mesma maneira.
+            Essa especificação não é garantia de que todos os servidores irão aplicar o conceito corretamente.
+            Métodos: GET, HEAD, PUT, DELETE.
+            Métodos que não são nem seguros nem idempotentes: POST, PATCH.
+
+9. Options
+    Informação sobre disponibilidade da requisição.
+    Seguro
+    Idempotente
+    Body -> Request: Não / Response: Não
+    Uso em formulários HTML: Não
+    Cacheable: Não
+
+10. Get
+    Pegar um recurso.
+    Somente recebe dados
+    Seguro
+    Idempotente
+    Body -> Request: Não / Response: Sim
+    Uso em formulários HTML: Sim
+    Cacheable: Sim
+
+11. Head
+    Semelhante ao GET, porém recebemos somente o cabeçalho -> head/posts
+    Seguro
+    Idempotente
+    Body -> Request: Não / Response: Não
+    Uso em formulários HTML: Não
+    Cacheable: Sim
+
+12. Post
+    Publicar/Cadastrar um recurso
+    Inseguro
+    Não idempotente
+    Body -> Request: Sim / Response: Sim
+    Uso em formulários HTML: Sim
+    Cacheable: possivelmente
+
+13. Put
+    Cria um novo ou atualiza um recurso
+    Diferente do Post por ser idempotente
+    Se utilizado para criação o status code é 201, enquanto para atualização é 204 ou 200 (ok)
+    Inseguro
+    Idempotente
+    Body -> Request: Sim / Response: Não
+    Uso em formulários HTML: Não
+    Cacheable: Não
+
+14. Patch
+    Modificação parcial de um recurso
+    Diferencia-se do Put por ser parcial.
+    Inseguro
+    Não idempotente
+    Body -> Request: Sim / Response: Sim
+    Uso em formulários HTML: Não
+    Cacheable: Não
+
+15. Delete (-X DELETE http://localhost:3000/posts/2)
+    Remove um recurso
+    Inseguro
+    Não idempotente
+    Body -> Request: Possível / Response: Possível
+    Uso em formulários HTML: 
+    Cacheable: Não
+
+16. Headers
+    Cabeçalhos
+    Informações adicionais para o pedido ou resposta
+    Nome: valor
+
+16.1. General
+    É o agrupamento geral do request.
+    Mostra endereço remoto, método de request, URL, porta, política de referenciados.
+
+16.2. Request
+    Authority
+    Method
+    Path
+    Scheme
+    Accept
+    Cookies
+    Dentre outros
+
+16.3. Response
+    Cache
+    Content-length
+    Content-type (text/html; charset=utf-8)
+    Dentre outros
+
+17. Status code
+    100: Continue
+    
+    200: OK (GET, POST)
+    201: Created (PUT)
+    204: No Content (DELETE, PUT)
+    
+    301: Moved Permanently
+    308: Permanently Redirect
+    302: Found
+    307: Temporary Redirect
+
+    400: Bad Request
+    401: Unauthorized
+    403: Forbidden
+    404: Not Found
+    405: Method Not Allowed
+    429: Too Many Requests
+    
+    500: Internal Server Error
+    503: Service Unavailable

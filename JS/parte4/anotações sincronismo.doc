@@ -1,0 +1,16 @@
+                    Javascript Assíncrono e promises
+
+1. Síncrono x Assíncrono
+Sistema síncrono é um sistema onde uma tarefa é concluída após a outra.
+É necessário que a primeira imagem carregue antes da segunda começar a carregar.
+
+Sistema assíncrono é um sistema onde tarefas são executadas de maneira independente uma da outra.
+
+2. Callback (callback.js)
+Funções aceitam qualquer tipo de dado como argumento.
+
+3. setTimeout(setTimeout.js)
+A função recebe como argumento uma função e o tempo para ser executada.
+
+4. Node.js
+
